@@ -39,12 +39,51 @@
 [data-theme="dark"] {
     --clr-bg: #0d1117;
     --clr-primary: #c8b8e8;
-    --clr-secondary: #161b22;
+    --clr-secondary: #1e2433;
     --clr-text: #e6edf3;
     --clr-text-muted: #8b949e;
     --clr-card-bg: #161b22;
     --clr-border: #30363d;
     --clr-btn-hover: #2d3748;
+}
+
+/* Dark mode — CTA button stays visible on dark hero */
+[data-theme="dark"] .cta-button {
+    background-color: #fff0f8;
+    color: #01072b;
+}
+
+[data-theme="dark"] .cta-button:hover {
+    background-color: #ffffff;
+}
+
+/* Dark mode — search section and filter buttons */
+[data-theme="dark"] .search-section {
+    background-color: #161b22;
+}
+
+[data-theme="dark"] .region-btn {
+    border-color: #8b9ac8;
+    color: #c8d0f0;
+}
+
+[data-theme="dark"] .region-btn.active,
+[data-theme="dark"] .region-btn:hover {
+    background-color: #c8b8e8;
+    color: #01072b;
+    border-color: #c8b8e8;
+}
+
+[data-theme="dark"] .search-input {
+    background-color: #0d1117;
+    border-color: #8b9ac8;
+    color: #e6edf3;
+}
+
+[data-theme="dark"] .search-btn {
+    background-color: #c8b8e8;
+    color: #01072b;
+    border-color: #c8b8e8;
 }
 
 /* ============================================================
