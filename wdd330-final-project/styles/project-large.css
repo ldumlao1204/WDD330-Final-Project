@@ -1,0 +1,41 @@
+/* ============================================================
+   DESKTOP BREAKPOINT — 1024px and wider
+   ============================================================ */
+@media (min-width: 1024px) {
+
+    /* Hero: even taller with bigger text */
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    /* Wider search bar on desktop */
+    .search-container {
+        max-width: 640px;
+    }
+
+    /* Country grid: 4 columns across */
+    .country-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* More breathing room on wide screens */
+    .search-section {
+        padding: var(--sp-lg) var(--sp-xl);
+    }
+
+    .countries-section {
+        padding: var(--sp-lg) var(--sp-xl);
+    }
+
+    footer {
+        padding: var(--sp-lg) var(--sp-xl);
+    }
+}

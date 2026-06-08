@@ -1,0 +1,65 @@
+/* ============================================================
+   TABLET BREAKPOINT — 768px and wider
+   At this width we show the full nav and hide the hamburger.
+   ============================================================ */
+@media (min-width: 768px) {
+
+    /* Hide hamburger — full nav is visible instead */
+    .hamburger {
+        display: none;
+    }
+
+    /* Show nav inline in the header (not as a dropdown) */
+    #main-nav {
+        display: block !important;
+        position: static;
+        background: none;
+        border: none;
+        padding: 0;
+        z-index: auto;
+    }
+
+    .navigation {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    .navigation li a {
+        padding: 0.4rem 0.8rem;
+        border-radius: var(--radius);
+    }
+
+    /* Hero gets taller and text gets bigger */
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero-content h1 {
+        font-size: var(--fs-2xl);
+    }
+
+    /* Country grid: 2 columns side by side */
+    .country-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer: switch from stacked column to a side-by-side row */
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .footer-left,
+    .footer-right {
+        flex: 1;
+        min-width: 160px;
+    }
+
+    .footer-center {
+        flex: 0 0 auto;
+        align-self: center;
+    }
+}

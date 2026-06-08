@@ -3,16 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World e-Travel Explorer - Discover Any Country</title>
-    <meta name="description"
-        content="Explore any country in the world — flag, capital, weather, currency, and more in one place. Your all-in-one travel research companion.">
+    <title>My Favorites - World e-Travel Explorer</title>
+    <meta name="description" content="Your saved favorite countries to visit. Manage your personal travel wish list.">
     <meta name="author" content="Leilany Dumlao">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="World e-Travel Explorer">
-    <meta property="og:description"
-        content="Discover any country before you travel. One destination for every destination.">
-    <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,9 +34,9 @@
 
         <nav id="main-nav" aria-label="Main navigation">
             <ul class="navigation">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="country.html">Country</a></li>
-                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="favorites.html" class="active">Favorites</a></li>
             </ul>
         </nav>
 
@@ -52,46 +45,15 @@
     </header>
 
     <main>
+        <section class="favorites-section">
+            <h1 class="page-title">&#10084;&#65039; My Favorite Countries</h1>
+            <p class="page-subtitle">Countries you have saved to your travel wish list.</p>
 
-        <!-- ===== HERO SECTION ===== -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Explore the World,<br>One Journey at a Time</h1>
-                <p>Discover any country — flag, capital, weather, currency, and more in one place.</p>
-                <a href="#search-section" class="cta-button">Start Exploring</a>
+            <!-- Favorites grid — populated by favorite.js -->
+            <div id="favorites-grid" class="country-grid">
+                <p class="empty-msg">You have no saved favorites yet.<br>Browse countries and click &#10084; to save them here.</p>
             </div>
         </section>
-
-        <!-- ===== SEARCH & FILTER SECTION ===== -->
-        <section id="search-section" class="search-section">
-            <div class="search-container">
-                <label for="country-search" class="sr-only">Search for a country</label>
-                <input
-                    type="search"
-                    id="country-search"
-                    class="search-input"
-                    placeholder="Search for a country..."
-                    autocomplete="off">
-                <button id="search-btn" class="search-btn" aria-label="Search">🔍</button>
-            </div>
-            <div class="region-filters" role="group" aria-label="Filter by region">
-                <button class="region-btn active" data-region="all">All</button>
-                <button class="region-btn" data-region="Africa">Africa</button>
-                <button class="region-btn" data-region="Asia">Asia</button>
-                <button class="region-btn" data-region="Europe">Europe</button>
-                <button class="region-btn" data-region="Americas">Americas</button>
-                <button class="region-btn" data-region="Oceania">Oceania</button>
-                <button class="region-btn" data-region="Antarctic">Antarctic</button>
-            </div>
-        </section>
-
-        <!-- ===== COUNTRY CARDS GRID ===== -->
-        <section class="countries-section">
-            <div id="country-grid" class="country-grid">
-                <p class="loading-msg">Loading countries... 🌍</p>
-            </div>
-        </section>
-
     </main>
 
     <!-- ===== FOOTER ===== -->
@@ -121,10 +83,6 @@
                 <p>Leilany Dumlao</p>
                 <p>&copy; <span id="currentyear"></span> World e-Travel Explorer</p>
                 <p>Last Modified: <span id="last-modified"></span></p>
-                <p>
-                    <a href="https://drive.google.com/file/d/1eDbkd69bLsHgMFinUjHPNgT5BFJhJCo9/view?usp=sharing"
-                        id="video-link" class="video-demo-link">Video Demo</a>
-                </p>
             </div>
         </div>
     </footer>
