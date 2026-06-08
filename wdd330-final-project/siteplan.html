@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 - Final Project Site Plan | World e-Travel Explorer</title>
+    <meta name="dscription" content="Leilany Dumlao, Final Project Site Plan for World e-Travel Explorer">
+    <meta name="author" content="Leilany Dumlao">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/siteplan.css" />
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <figure>
+                    <img src="images/world-travel-explorer.webp" alt="World e-Travel Explorer Logo" class="logo-img" width="100"/>
+                </figure>
+                <div class="logo-text">
+                    <span class="logo-title">World e-Travel Explorer</span>
+                    
+                </div>
+            </div>
+            <nav aria-label="Section navigation">
+                <a href="#overview">Overview</a>
+                <a href="#audience">Audience</a>
+                <a href="#functions">Functions</a>
+                <a href="#wireframes">Wireframes</a>
+                <a href="#data">Data</a>
+                <a href="#modules">Modules</a>
+                <a href="#identity">Identity</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#challenges">Challenges</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-label">WDD 330 Final Project Proposal</p>
+            <h1>World e-<span class="accent">Travel</span> Explorer</h1>
+            <p class="hero-tagline">One destination for every destination — explore any country before you travel.</p>
+        </div>
+        <div class="hero-globe" aria-hidden="true">🌍</div>
+    </section>
+
+    <main class="container">
+
+        <!-- ===== 1. OVERVIEW ===== -->
+        <section id="overview" class="card">
+            <div class="section-badge">01</div>
+            <h2>Overview</h2>
+            <p>The <strong>World e-Travel Explorer</strong> website provides comprehensive information about any country
+                in the world for travelers and adventurers planning their next journey.</p>
+            <div class="two-col">
+                <div class="info-block">
+                    <h3>The Problem</h3>
+                    <p>Individual travelers must visit many different websites and blogs to research a country before
+                        visiting. There is no single, all-in-one reference covering culture, geography, weather, and key
+                        facts in one place.</p>
+                </div>
+                <div class="info-block">
+                    <h3>The Motivation</h3>
+                    <p>A personal dream of travel inspired this project — building an interactive app where users of any
+                        age can explore any country in the world without bouncing between multiple websites. It combines
+                        a passion for geography, travel, foreign culture, and real-life data that is useful to everyone
+                        who loves to travel.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 2. TARGET AUDIENCE ===== -->
+        <section id="audience" class="card">
+            <div class="section-badge">02</div>
+            <h2>Target Audience</h2>
+            <p>The application serves curious people of <strong>all ages</strong> who enjoy exploring and traveling
+                beyond their home country.</p>
+            <div class="audience-grid">
+                <div class="audience-chip">✈️ Single Travelers</div>
+                <div class="audience-chip">👨‍👩‍👧 Families</div>
+                <div class="audience-chip">💼 Professionals</div>
+                <div class="audience-chip">🎓 Students</div>
+                <div class="audience-chip">🌍 Culture Enthusiasts</div>
+                <div class="audience-chip">🗺️ Geography Lovers</div>
+            </div>
+        </section>
+
+        <!-- ===== 3. MAJOR FUNCTIONS ===== -->
+        <section id="functions" class="card">
+            <div class="section-badge">03</div>
+            <h2>Major Functions</h2>
+            <div class="functions-grid">
+
+                <div class="function-card">
+                    <div class="fn-icon">🗺️</div>
+                    <div class="fn-number">1</div>
+                    <h3>Country Detail View</h3>
+                    <p>Select a country to open a full detail page displaying its flag, capital, population, current
+                        weather, languages, and currencies.</p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">🔍</div>
+                    <div class="fn-number">2</div>
+                    <h3>Country Search</h3>
+                    <p>Users type a country name and the app calls the REST Countries API, rendering results as
+                        card-style layouts on the home page.</p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">🌤️</div>
+                    <div class="fn-number">3</div>
+                    <h3>Weather Widget</h3>
+                    <p>Open-Meteo API fetches live capital city weather including temperature (°C/°F), wind speed, and a
+                        visual condition icon.</p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">📍</div>
+                    <div class="fn-number">4</div>
+                    <h3>Points of Interest</h3>
+                    <p>Geoapify Places API fetches detailed information about attractions, restaurants, and
+                        accommodations at the destination.</p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">🌡️</div>
+                    <div class="fn-number">5</div>
+                    <h3>°C / °F Toggle</h3>
+                    <p>Users toggle between Celsius and Fahrenheit when viewing weather data; preference saved in
+                        localStorage.</p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">🌐</div>
+                    <div class="fn-number">6</div>
+                    <h3>Filter by Region</h3>
+                    <p>Browse countries filtered by seven regions: Africa, Asia, Europe, North America, South America,
+                        Oceania, and Antarctica.</p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">🏛️</div>
+                    <div class="fn-number">7</div>
+                    <h3>Attraction Detail Cards</h3>
+                    <p>Cards display attraction name, category, and a short description fetched from the OpenTripMap
+                        place detail endpoint.</p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">❤️</div>
+                    <div class="fn-number">8</div>
+                    <h3>Favorites Page</h3>
+                    <p>A dedicated page where users can view all countries they have saved as favorites to visit later.
+                    </p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">🔗</div>
+                    <div class="fn-number">9</div>
+                    <h3>Border Country Navigation</h3>
+                    <p>Neighboring countries are displayed as clickable chips — tap one to jump directly to that
+                        country's detail page.</p>
+                </div>
+
+                <div class="function-card">
+                    <div class="fn-icon">🌙</div>
+                    <div class="fn-number">10</div>
+                    <h3>Dark / Light Mode Toggle</h3>
+                    <p>A toggle switches between dark and light themes; user preference is saved in localStorage.</p>
+                </div>
+
+                <div class="function-card fn-wide">
+                    <div class="fn-icon">⚠️</div>
+                    <div class="fn-number">11</div>
+                    <h3>Error Handling</h3>
+                    <p>Handles all API errors gracefully. If the main country data fails, a clear error message with a
+                        retry button appears. If only weather or attractions fail, a small warning appears in that
+                        section while the rest of the page continues to work normally.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== 4. WIREFRAMES ===== -->
+        <section id="wireframes" class="card">
+            <div class="section-badge">04</div>
+            <h2>Wireframes</h2>
+            <p>Wireframes cover the major views for both mobile and desktop breakpoints.</p>
+            <div class="wireframe-grid">
+
+                <div class="wireframe-box">
+                    <div class="wf-label">🖥️ Home Page — Desktop</div>
+                    <div class="wf-mock desktop">
+                        <div class="wf-header-bar"></div>
+                        <div class="wf-search-bar"></div>
+                        <div class="wf-filter-row">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="wf-card-grid">
+                            <div class="wf-card">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wireframe-box">
+                    <div class="wf-label">📱 Home Page — Mobile</div>
+                    <div class="wf-mock mobile">
+                        <div class="wf-header-bar"></div>
+                        <div class="wf-search-bar"></div>
+                        <div class="wf-mobile-cards">
+                            <div class="wf-card">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                            </div>
+                            <div class="wf-card">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wireframe-box">
+                    <div class="wf-label">🖥️ Country Detail — Desktop</div>
+                    <div class="wf-mock desktop">
+                        <div class="wf-header-bar"></div>
+                        <div class="wf-detail-hero">
+                            <div class="wf-big-flag"></div>
+                            <div class="wf-detail-info">
+                                <div class="wf-title-line"></div>
+                                <div class="wf-info-lines"><span></span><span></span><span></span><span></span></div>
+                            </div>
+                        </div>
+                        <div class="wf-widgets">
+                            <div class="wf-widget"></div>
+                            <div class="wf-widget"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wireframe-box">
+                    <div class="wf-label">📱 Favorites — Mobile</div>
+                    <div class="wf-mock mobile">
+                        <div class="wf-header-bar"></div>
+                        <div class="wf-fav-title"></div>
+                        <div class="wf-mobile-cards">
+                            <div class="wf-card fav">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                                <div class="wf-heart">♥</div>
+                            </div>
+                            <div class="wf-card fav">
+                                <div class="wf-flag"></div>
+                                <div class="wf-lines"><span></span><span></span></div>
+                                <div class="wf-heart">♥</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== 5. EXTERNAL DATA ===== -->
+        <section id="data" class="card">
+            <div class="section-badge">05</div>
+            <h2>External Data Sources</h2>
+            <div class="api-list">
+
+                <div class="api-item">
+                    <div class="api-badge">API 1</div>
+                    <div class="api-body">
+                        <h3>REST Countries API</h3>
+                        <p>Provides country facts: name, flag, capital, population, region, languages, currencies,
+                            border countries, and lat/lng coordinates.</p>
+                        <div class="api-fields">
+                            <span>name</span><span>capital</span><span>region</span><span>subregion</span><span>population</span>
+                            <span>lat/lng</span><span>area</span><span>flags</span><span>currencies</span><span>languages</span>
+                            <span>borders</span><span>timezones</span><span>maps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-item">
+                    <div class="api-badge">API 2</div>
+                    <div class="api-body">
+                        <h3>Open-Meteo</h3>
+                        <p>Provides current weather for capital cities including temperature, wind speed, and weather
+                            condition codes.</p>
+                        <div class="api-fields">
+                            <span>temperature</span><span>windspeed</span><span>winddirection</span><span>weathercode</span>
+                            <span>humidity</span><span>precipitation_probability</span><span>visibility</span><span>uv_index</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-item">
+                    <div class="api-badge">API 3</div>
+                    <div class="api-body">
+                        <h3>Geoapify Places API</h3>
+                        <p>Returns nearby attractions, restaurants, and accommodations with names, categories, and
+                            addresses.</p>
+                        <div class="api-fields">
+                            <span>name</span><span>country</span><span>city</span><span>categories</span>
+                            <span>address_line1</span><span>address_line2</span><span>lat</span><span>lon</span><span>distance</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="storage-note">
+                <strong>localStorage:</strong> Favorite countries list · Temperature unit preference (°C / °F) ·
+                Dark/light mode preference
+            </div>
+        </section>
+
+        <!-- ===== 6. MODULE LIST ===== -->
+        <section id="modules" class="card">
+            <div class="section-badge">06</div>
+            <h2>Module List</h2>
+            <div class="module-grid">
+                <div class="module-group">
+                    <h3>HTML Pages</h3>
+                    <ul>
+                        <li><code>index.html</code></li>
+                        <li><code>country.html</code></li>
+                        <li><code>favorites.html</code></li>
+                    </ul>
+                </div>
+                <div class="module-group">
+                    <h3>CSS</h3>
+                    <ul>
+                        <li><code>main.css</code></li>
+                        <li><code>theme.css</code></li>
+                    </ul>
+                </div>
+                <div class="module-group">
+                    <h3>JavaScript</h3>
+                    <ul>
+                        <li><code>main.js</code></li>
+                        <li><code>countries.js</code></li>
+                        <li><code>weather.js</code></li>
+                        <li><code>favorite.js</code></li>
+                        <li><code>detail.js</code></li>
+                        <li><code>utils.js</code></li>
+                        <li><code>storage.js</code></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 7. GRAPHIC IDENTITY ===== -->
+        <section id="identity" class="card">
+            <div class="section-badge">07</div>
+            <h2>Graphic Identity</h2>
+            <div class="identity-grid">
+
+                <div class="identity-block">
+                    <h3>Color Scheme</h3>
+                    <div class="color-swatches">
+                        <div class="swatch" style="background:#01072b; color:#fff;">
+                            <span class="swatch-hex">#01072b</span>
+                            <span class="swatch-name">Primary — Deep Navy</span>
+                        </div>
+                        <div class="swatch" style="background:#fff0f8; color:#01072b; border:1px solid #e0c8d8;">
+                            <span class="swatch-hex">#fff0f8</span>
+                            <span class="swatch-name">Secondary — Soft Pink</span>
+                        </div>
+                        <div class="swatch" style="background:#ffffff; color:#01072b; border:1px solid #ddd;">
+                            <span class="swatch-hex">#ffffff</span>
+                            <span class="swatch-name">Background — White</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="identity-block">
+                    <h3>Typography</h3>
+                    <div class="type-samples">
+                        <div class="type-row heading-sample">Lato Bold 700 — Heading (24px)</div>
+                        <div class="type-row body-sample">Lato Regular 400 — Body text, clear and easy to read (16px)
+                        </div>
+                    </div>
+                    <p class="type-note">Additional fonts may be used for special sections as needed.</p>
+                </div>
+
+                <div class="identity-block icon-block">
+                    <h3>Application Icon</h3>
+                    <div class="app-icon-preview">
+                        <div class="app-icon">
+                            <img src="images/world-travel-explorer.webp" alt="World e-Travel Explorer Logo" class="logo-img" width="100" />
+                                                   </div>
+                        <div class="icon-desc">
+                            <p>A clean, modern globe paired with a travel motif captures the essence of global adventure
+                                and digital navigation. The deep navy and soft pink color palette reinforces the brand
+                                identity.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== 8. TIMELINE ===== -->
+        <section id="timeline" class="card">
+            <div class="section-badge">08</div>
+            <h2>Timeline</h2>
+            <div class="timeline">
+
+                <div class="tl-item done">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-week">Week 4</span>
+                        <h3>Project Planning</h3>
+                        <p>Site planning, brainstorming, and proposal writing.</p>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-week">Week 5</span>
+                        <h3>Setup &amp; Build Project</h3>
+                        <ul>
+                            <li>GitHub repo &amp; Render deployment setup</li>
+                            <li>Folder structure, home page HTML &amp; CSS</li>
+                            <li>Header, footer, buttons, logo, animations</li>
+                            <li>External API documentation review &amp; testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-week">Week 6</span>
+                        <h3>JavaScript &amp; Third-Party APIs</h3>
+                        <ul>
+                            <li>Integrate REST Countries, Open-Meteo, and Geoapify APIs</li>
+                            <li>Build country detail, weather widget, and attraction cards</li>
+                            <li>Favorites, region filter, and localStorage features</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tl-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-week">Week 7</span>
+                        <h3>Polish &amp; Deployment</h3>
+                        <ul>
+                            <li>Full function review and testing in Render</li>
+                            <li>Accessibility audit &amp; color contrast checks</li>
+                            <li>Mobile view testing</li>
+                            <li>Final deployment to GitHub Pages</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== 9. PROJECT PLANNING ===== -->
+        <section class="card">
+            <div class="section-badge">09</div>
+            <h2>Project Planning</h2>
+            <p>All tasks are tracked in a Trello board with detailed cards for each deliverable.</p>
+            <a class="trello-link" href="https://trello.com/b/W1xTS3yj/wdd-330-final-project" target="_blank"
+                rel="noopener noreferrer">
+                <span>📋</span> View Trello Board — WDD 330 Final Project
+            </a>
+        </section>
+
+        <!-- ===== 10. CHALLENGES ===== -->
+        <section id="challenges" class="card">
+            <div class="section-badge">10</div>
+            <h2>Challenges</h2>
+            <div class="challenges-list">
+                <div class="challenge-item">
+                    <span class="ch-icon">🧠</span>
+                    <div>
+                        <strong>Brainstorming &amp; Final Decision</strong>
+                        <p>Choosing one project idea from many compelling options required careful consideration before
+                            committing.</p>
+                    </div>
+                </div>
+                <div class="challenge-item">
+                    <span class="ch-icon">🔌</span>
+                    <div>
+                        <strong>API Research</strong>
+                        <p>Finding reliable, functioning external APIs that provide the needed data took significant
+                            research — some sources were not operational.</p>
+                    </div>
+                </div>
+                <div class="challenge-item">
+                    <span class="ch-icon">📁</span>
+                    <div>
+                        <strong>Module Structure</strong>
+                        <p>Determining the initial module list and how to organize the JavaScript files for a clean, maintainable codebase.</p>
+                    </div>
+                </div>
+                <div class="challenge-item">
+                    <span class="ch-icon">⏰</span>
+                    <div>
+                        <strong>Time Management</strong>
+                        <p>Personal commitments created pressure on the timeline, requiring careful prioritization of
+                            deliverables each week.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="images/world-travel-explorer.webp" alt="World e-Travel Explorer Logo" class="logo-img" width="100" />
+            </div>
+            <p>WDD 330 Final Project Proposal &nbsp;|&nbsp; Leilany Dumlao</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
