@@ -38,7 +38,7 @@
 /* Dark mode — activated by adding data-theme="dark" to <html> */
 [data-theme="dark"] {
     --clr-bg: #0d1117;
-    --clr-primary: #c8b8e8;
+    --clr-primary: #e6edf3;
     --clr-secondary: #1e2433;
     --clr-text: #e6edf3;
     --clr-text-muted: #8b949e;
@@ -47,7 +47,18 @@
     --clr-btn-hover: #2d3748;
 }
 
-/* Dark mode — CTA button stays visible on dark hero */
+/* Dark mode — navigation links */
+[data-theme="dark"] .navigation li a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] .navigation li a:hover,
+[data-theme="dark"] .navigation li a.active {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+/* Dark mode — CTA button stays pink/visible on dark hero */
 [data-theme="dark"] .cta-button {
     background-color: #fff0f8;
     color: #01072b;
@@ -55,35 +66,46 @@
 
 [data-theme="dark"] .cta-button:hover {
     background-color: #ffffff;
+    color: #01072b;
 }
 
-/* Dark mode — search section and filter buttons */
+/* Dark mode — search section */
 [data-theme="dark"] .search-section {
     background-color: #161b22;
 }
 
+[data-theme="dark"] .search-input {
+    background-color: #0d1117;
+    border-color: #4a5568;
+    color: #e6edf3;
+}
+
+[data-theme="dark"] .search-input::placeholder {
+    color: #8b949e;
+}
+
+[data-theme="dark"] .search-btn {
+    background-color: #4a5568;
+    color: #ffffff;
+    border-color: #4a5568;
+}
+
+[data-theme="dark"] .search-btn:hover {
+    background-color: #718096;
+}
+
+/* Dark mode — region filter buttons */
 [data-theme="dark"] .region-btn {
-    border-color: #8b9ac8;
+    border-color: #4a5568;
     color: #c8d0f0;
+    background-color: transparent;
 }
 
 [data-theme="dark"] .region-btn.active,
 [data-theme="dark"] .region-btn:hover {
-    background-color: #c8b8e8;
-    color: #01072b;
-    border-color: #c8b8e8;
-}
-
-[data-theme="dark"] .search-input {
-    background-color: #0d1117;
-    border-color: #8b9ac8;
-    color: #e6edf3;
-}
-
-[data-theme="dark"] .search-btn {
-    background-color: #c8b8e8;
-    color: #01072b;
-    border-color: #c8b8e8;
+    background-color: #4a5568;
+    color: #ffffff;
+    border-color: #4a5568;
 }
 
 /* ============================================================
