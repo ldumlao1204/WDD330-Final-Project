@@ -194,7 +194,7 @@ header {
 }
 
 .site-name {
-    font-size: 1.05rem;
+    font-size: 1.5rem;
     font-weight: var(--fw-bold);
     color: #ffffff;
     flex: 1;
@@ -265,7 +265,7 @@ header {
 .navigation li a:hover,
 .navigation li a.active {
     background-color: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
+    color: var(--clr-secondary);
 }
 
 /* ============================================================
@@ -343,7 +343,7 @@ main {
 .cta-button {
     display: inline-block;
     padding: 0.9rem 2.2rem;
-    background-color: #fff0f8;
+    background-color: var(--clr-secondary);
     color: #01072b;
     border-radius: var(--radius-pill);
     font-weight: var(--fw-bold);
@@ -638,7 +638,7 @@ main {
 }
 
 /* ============================================================
-   FOOTER
+   FOOTER STYLES
    ============================================================ */
 footer {
     background-color: #01072b;
@@ -659,7 +659,7 @@ footer h3 {
     font-size: var(--fs-base);
     font-weight: var(--fw-bold);
     margin-bottom: var(--sp-xs);
-    color: var(--clr-secondary);
+   
 }
 
 footer p {
@@ -690,7 +690,6 @@ footer p {
 }
 
 .video-demo-link {
-    color: var(--clr-secondary);
     text-decoration: underline;
     transition: opacity var(--transition);
 }
