@@ -20,4 +20,27 @@ export async function fetchCountryByCode(code) {
     const country = data.find(c => c.cca3 === code);
     if (!country) throw new Error(`Country not found: ${code}`);
     return country;
+}   
+
+    // Searches countries by name — uses filter() to find matches
+export function searchCountriesByName(countries, query) {
+    const q = query.toLowerCase().trim();
+    return countries.filter(c => c.name.common.toLowerCase().includes(q));
 }
+
+// Filters countries by region — uses filter() to match the region
+export function filterByRegion(countries, region) {
+    if (region === "all") return countries;
+    return countries.filter(c => c.region === region);
+}
+
+// Fetches full country data for a list of border codes — uses map() + Promise.all()
+export async function fetchBorderCountries(codes) {
+    const response = await fetch(DATA_URL);
+    if (!response.ok) {
+        throw new Error(`Failed to load countries. Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return codes.map(code => data.find(c => c.cca3 === code)).filter(Boolean);
+}
+
