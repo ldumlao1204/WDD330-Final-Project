@@ -1,4 +1,5 @@
 import { fetchCountryByCode } from "./countries.js";
+import { fetchPlaces } from "./geoapify.js";
 import { formatPopulation, getCapital, getCurrencies, getLanguages } from "./util.js";
 import { saveFavorite, removeFavorite, isFavorite } from "./storage.js";
 
@@ -38,11 +39,28 @@ async function renderCountry() {
         const weather = country.latlng && country.latlng.length >= 2
             ? await fetchWeather(country.latlng[0], country.latlng[1])
             : null;
+        
+        const places = country.latlng && country.latlng.length >= 2
+            ? await fetchPlaces(country.latlng[0], country.latlng[1])
+            : [];
 
         const borderChips = country.borders && country.borders.length > 0
             ? country.borders.map(b => `<a href="country.html?code=${b}" class="border-chip">${b}</a>`).join("")
             : "<span class=\"no-borders\">No bordering countries</span>";
 
+        const placesBlock = places.length > 0
+            ? `<div class="places-section">
+        <h3>Points of Interest</h3>
+        <ul class="places-list">
+            ${places.map(p => `
+                <li class="place-item">
+                    <span class="place-name">${p.properties.name || "Unnamed Place"}</span>
+                    <span class="place-address">${p.properties.formatted || ""}</span>
+                </li>`).join("")}
+        </ul>
+        </div>`
+            : "";
+        
         const weatherBlock = weather
             ? `<div class="weather-widget">
                 <h3>Current Weather</h3>
@@ -69,6 +87,7 @@ async function renderCountry() {
                     <h3>Bordering Countries</h3>
                     <div class="border-chips">${borderChips}</div>
                 </div>
+                 ${placesBlock}
                 <div class="detail-actions">
                     <button class="fav-btn detail-fav-btn" id="detail-fav-btn" data-saved="${isFavorite(code)}">
                         ${isFavorite(code) ? "♥ Saved" : "♡ Save"}

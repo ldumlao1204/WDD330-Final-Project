@@ -890,3 +890,46 @@ footer p {
 .skeleton-line.short {
     width: 50%;
 }
+
+/* ============================================================
+   POINTS OF INTEREST Styles
+   ============================================================ */
+.places-section {
+    padding: var(--sp-md);
+    border-top: 1px solid var(--clr-border);
+}
+
+.places-section h3 {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+    color: var(--clr-text);
+    margin-bottom: var(--sp-sm);
+}
+
+.places-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xs);
+    list-style: none;
+}
+
+.place-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem var(--sp-sm);
+    background-color: var(--clr-secondary);
+    border-radius: var(--radius);
+    border: 1px solid var(--clr-border);
+}
+
+.place-name {
+    font-weight: var(--fw-bold);
+    color: var(--clr-text);
+    font-size: var(--fs-sm);
+}
+
+.place-address {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-muted);
+    margin-top: 0.15rem;
+}
