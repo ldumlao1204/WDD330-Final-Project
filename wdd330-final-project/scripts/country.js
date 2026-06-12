@@ -1,5 +1,5 @@
 import { fetchCountryByCode } from "./countries.js";
-import { fetchPlaces } from "./geoapify.js";
+import { fetchNearbyAttractions, formatCategory } from "./geoapify.js";
 import { formatPopulation, getCapital, getCurrencies, getLanguages } from "./util.js";
 import { saveFavorite, removeFavorite, isFavorite } from "./storage.js";
 
@@ -25,6 +25,17 @@ function getWeatherIcon(weathercode) {
     if (weathercode <= 82) return "🌦️";
     if (weathercode <= 99) return "⛈️";
     return "🌡️";
+}    
+
+function getWeatherLabel(weathercode) {
+    if (weathercode === 0) return "Clear Sky";
+    if (weathercode <= 3) return "Partly Cloudy";
+    if (weathercode <= 48) return "Foggy";
+    if (weathercode <= 67) return "Rainy";
+    if (weathercode <= 77) return "Snowy";
+    if (weathercode <= 82) return "Showers";
+    if (weathercode <= 99) return "Thunderstorm";
+    return "Unknown";
 }
 
 async function renderCountry() {
@@ -41,7 +52,7 @@ async function renderCountry() {
             : null;
         
         const places = country.latlng && country.latlng.length >= 2
-            ? await fetchPlaces(country.latlng[0], country.latlng[1])
+            ? await fetchNearbyAttractions(country.latlng[0], country.latlng[1])
             : [];
 
         const borderChips = country.borders && country.borders.length > 0
@@ -65,6 +76,7 @@ async function renderCountry() {
             ? `<div class="weather-widget">
                 <h3>Current Weather</h3>
                 <p class="weather-icon">${getWeatherIcon(weather.weathercode)}</p>
+                <p class="weather-label">${getWeatherLabel(weather.weathercode)}</p>
                 <p class="weather-temp">${weather.temperature}°C</p>
                 <p class="weather-wind">Wind: ${weather.windspeed} km/h</p>
                </div>`

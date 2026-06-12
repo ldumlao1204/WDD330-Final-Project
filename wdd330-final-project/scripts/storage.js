@@ -36,3 +36,11 @@ export function getTempUnit() {
 export function setTempUnit(unit) {
     localStorage.setItem(TEMP_UNIT_KEY, unit);
 }
+
+export function clearFavorites() {
+    localStorage.removeItem(FAVORITES_KEY);
+}
+
+export function getFavoritesCount() {
+    return getFavorites().length;
+}

@@ -675,6 +675,12 @@ main {
     margin-bottom: 0.3rem;
 }
 
+.weather-label {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-muted);
+    margin-bottom: 0.25rem;
+}
+
 .weather-temp {
     font-size: var(--fs-xl);
     font-weight: var(--fw-bold);
