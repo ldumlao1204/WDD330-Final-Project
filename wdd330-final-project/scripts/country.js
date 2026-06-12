@@ -54,13 +54,13 @@ async function renderCountry() {
 
         container.innerHTML = `
             <div class="detail-card">
-                <img class="detail-flag" src="${country.flags.svg || country.flags.png}" alt="${country.flags.alt || `Flag of ${country.name.common}`}">
+                <img class="detail-flag" src="https://flagcdn.com/w320/${country.cca2.toLowerCase()}.png" alt="Flag of ${country.name.common}">
                 <div class="detail-info">
                     <h1 class="detail-name">${country.name.common}</h1>
                     <p><strong>Official Name:</strong> ${country.name.official}</p>
                     <p><strong>Capital:</strong> ${getCapital(country)}</p>
                     <p><strong>Region:</strong> ${country.region}</p>
-                    <p><strong>Population:</strong> ${formatPopulation(country.population)}</p>
+                    <p><strong>Area:</strong> ${country.area ? country.area.toLocaleString() + " km²" : "N/A"}</p>
                     <p><strong>Currencies:</strong> ${getCurrencies(country)}</p>
                     <p><strong>Languages:</strong> ${getLanguages(country)}</p>
                 </div>

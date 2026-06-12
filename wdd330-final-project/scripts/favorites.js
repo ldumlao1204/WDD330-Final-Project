@@ -1,5 +1,5 @@
 import { getFavorites, removeFavorite } from "./storage.js";
-import { formatPopulation, getCapital } from "./util.js";
+import { getCapital } from "./util.js";
 
 //Get the page elements
 const grid = document.getElementById("favorites-grid");
@@ -19,13 +19,14 @@ function renderFavorites() {
         const clone = template.content.cloneNode(true);
 
         const img = clone.querySelector(".card-flag");
-        img.src = country.flags.svg || country.flags.png;
-        img.alt = country.flags.alt || `Flag of ${country.name.common}`;
+        img.src = `https://flagcdn.com/w320/${country.cca2.toLowerCase()}.png`;
+        img.alt = `Flag of ${country.name.common}`;
+
 
         clone.querySelector(".card-name").textContent = country.name.common;
         clone.querySelector(".card-capital").textContent = getCapital(country);
         clone.querySelector(".card-region").textContent = country.region;
-        clone.querySelector(".card-population").textContent = formatPopulation(country.population);
+        clone.querySelector(".card-population").textContent = country.area ? country.area.toLocaleString() + " km²" : "N/A";
 
         const viewBtn = clone.querySelector(".view-btn");
         viewBtn.addEventListener("click", () => {
