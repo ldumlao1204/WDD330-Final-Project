@@ -1,4 +1,5 @@
 import { fetchAllCountries } from "./countries.js";
+import { showSkeletons } from "./skeletonLoader.js";
 import { formatPopulation, getCapital } from "./util.js";
 import { saveFavorite, removeFavorite, isFavorite } from "./storage.js";
 
@@ -149,6 +150,7 @@ if (searchInput) searchInput.addEventListener("input", filterCountries);
 // Fetches countries and renders them — called once when page loads
 async function init() {
     if (!grid || !template) return;
+    showSkeletons(grid);
     try {
         allCountries = await fetchAllCountries();
         renderCards(allCountries);
