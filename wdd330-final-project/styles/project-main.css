@@ -693,6 +693,21 @@ main {
     margin-top: 0.25rem;
 }
 
+.temp-toggle {
+    margin-top: 8px;
+    padding: 6px 14px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.temp-toggle:hover {
+    opacity: 0.85;
+}
+
 .borders-section {
     padding: var(--sp-md);
     border-top: 1px solid var(--clr-border);

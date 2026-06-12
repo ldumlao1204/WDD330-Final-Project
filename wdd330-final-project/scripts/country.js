@@ -1,5 +1,6 @@
 import { fetchCountryByCode } from "./countries.js";
 import { fetchNearbyAttractions, formatCategory } from "./geoapify.js";
+import { WeatherWidget } from "./weatherWidget.js";
 import { formatPopulation, getCapital, getCurrencies, getLanguages } from "./util.js";
 import { saveFavorite, removeFavorite, isFavorite } from "./storage.js";
 
@@ -16,28 +17,6 @@ async function fetchWeather(lat, lng) {
     return data.current_weather;
 }
 
-function getWeatherIcon(weathercode) {
-    if (weathercode === 0) return "☀️";
-    if (weathercode <= 3) return "⛅";
-    if (weathercode <= 48) return "🌫️";
-    if (weathercode <= 67) return "🌧️";
-    if (weathercode <= 77) return "❄️";
-    if (weathercode <= 82) return "🌦️";
-    if (weathercode <= 99) return "⛈️";
-    return "🌡️";
-}    
-
-function getWeatherLabel(weathercode) {
-    if (weathercode === 0) return "Clear Sky";
-    if (weathercode <= 3) return "Partly Cloudy";
-    if (weathercode <= 48) return "Foggy";
-    if (weathercode <= 67) return "Rainy";
-    if (weathercode <= 77) return "Snowy";
-    if (weathercode <= 82) return "Showers";
-    if (weathercode <= 99) return "Thunderstorm";
-    return "Unknown";
-}
-
 async function renderCountry() {
     if (!code) {
         container.innerHTML = "<p class=\"error-msg\">No country selected. <a href=\"index.html\">Go back home</a></p>";
@@ -50,7 +29,7 @@ async function renderCountry() {
         const weather = country.latlng && country.latlng.length >= 2
             ? await fetchWeather(country.latlng[0], country.latlng[1])
             : null;
-        
+
         const places = country.latlng && country.latlng.length >= 2
             ? await fetchNearbyAttractions(country.latlng[0], country.latlng[1])
             : [];
@@ -71,15 +50,10 @@ async function renderCountry() {
         </ul>
         </div>`
             : "";
-        
+
+        let widget = null;
         const weatherBlock = weather
-            ? `<div class="weather-widget">
-                <h3>Current Weather</h3>
-                <p class="weather-icon">${getWeatherIcon(weather.weathercode)}</p>
-                <p class="weather-label">${getWeatherLabel(weather.weathercode)}</p>
-                <p class="weather-temp">${weather.temperature}°C</p>
-                <p class="weather-wind">Wind: ${weather.windspeed} km/h</p>
-               </div>`
+            ? (widget = new WeatherWidget(weather), widget.render())
             : "";
 
         container.innerHTML = `
@@ -99,7 +73,7 @@ async function renderCountry() {
                     <h3>Bordering Countries</h3>
                     <div class="border-chips">${borderChips}</div>
                 </div>
-                 ${placesBlock}
+                ${placesBlock}
                 <div class="detail-actions">
                     <button class="fav-btn detail-fav-btn" id="detail-fav-btn" data-saved="${isFavorite(code)}">
                         ${isFavorite(code) ? "♥ Saved" : "♡ Save"}
@@ -107,6 +81,8 @@ async function renderCountry() {
                 </div>
             </div>
         `;
+
+        if (widget) widget.attachToggle();
 
         const favBtn = document.getElementById("detail-fav-btn");
         favBtn.addEventListener("click", () => {
