@@ -10,7 +10,6 @@ const code = params.get("code");
 const container = document.getElementById("country-detail");
 
 async function fetchWeather(lat, lng) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current_weather=true`;
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current_weather=true&timezone=auto`;
     const response = await fetch(url);
     if (!response.ok) return null;
