@@ -822,7 +822,9 @@ footer {
 
 .footer-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-start;
     gap: var(--sp-md);
     max-width: 1200px;
     margin: 0 auto;
@@ -842,9 +844,20 @@ footer p {
     line-height: 1.75;
 }
 
-.footer-center {
-    width: 100%;
+.footer-left {
+    flex: 1;
 }
+    
+.footer-center {
+    flex: 1;
+    text-align: center;
+}
+    
+.footer-right {
+    flex: 1;
+    text-align: right;
+}
+
 
 .social-links {
     display: flex;
