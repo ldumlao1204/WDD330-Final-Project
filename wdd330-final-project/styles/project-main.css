@@ -829,7 +829,7 @@ footer {
     align-items: flex-start;
 }
 
-footer h3 {
+footer h2 {
     font-size: var(--fs-base);
     font-weight: var(--fw-bold);
     margin-bottom: var(--sp-xs);
