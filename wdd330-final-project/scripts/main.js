@@ -1,5 +1,5 @@
 import { fetchAllCountries } from "./countries.js";
-import { showSkeletons } from "./skeletonLoader.js";
+import { showSkeletons } from "./SkeletonLoader.js";
 import { formatPopulation, getCapital } from "./util.js";
 import { saveFavorite, removeFavorite, isFavorite } from "./storage.js";
 
