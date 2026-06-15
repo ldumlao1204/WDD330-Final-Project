@@ -697,7 +697,7 @@ main {
     margin-top: 8px;
     padding: 6px 14px;
     background: var(--accent);
-    color: #fff;
+    color: var(--clr-text);
     border: none;
     border-radius: 20px;
     cursor: pointer;
