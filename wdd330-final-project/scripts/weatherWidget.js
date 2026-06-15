@@ -36,12 +36,22 @@ export class WeatherWidget {
         if (code <= 99) return "Thunderstorm";
         return "Unknown";
     }
+    getTime() {
+        if (!this.weather.time) return "";
+        const [, timePart] = this.weather.time.split("T");
+        const [hour, minute] = timePart.split(":");
+        const h = parseInt(hour);
+        const ampm = h >= 12 ? "PM" : "AM";
+        const hour12 = h % 12 || 12;
+        return `${hour12}:${minute} ${ampm}`;
+    }
 
     render() {
         return `<div class="weather-widget">
             <h3>Current Weather</h3>
             <p class="weather-icon">${this.getIcon()}</p>
             <p class="weather-label">${this.getLabel()}</p>
+            <p class="weather-time">Local Time: ${this.getTime()}</p>
             <p class="weather-temp" id="weather-temp">${this.convertTemp(this.weather.temperature)}</p>
             <p class="weather-wind">Wind: ${this.weather.windspeed} km/h</p>
             <button class="temp-toggle" id="temp-toggle">${this.unit === "C" ? "Switch to °F" : "Switch to °C"}</button>
