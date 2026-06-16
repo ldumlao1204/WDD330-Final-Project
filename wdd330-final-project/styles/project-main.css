@@ -5,9 +5,9 @@
 :root {
     --clr-bg: #ffffff;
     --clr-primary: #01072b;
-    --clr-secondary: #fff0f8;
+    --clr-secondary: #f7d7e8;
     --clr-text: #1a1a2e;
-    --clr-text-muted: #555577;
+    --clr-text-muted: #4c4c74;
     --clr-card-bg: #ffffff;
     --clr-border: #e0d8e8;
     --clr-btn-hover: #0d1f70;
@@ -41,7 +41,7 @@
     --clr-primary: #e6edf3;
     --clr-secondary: #1e2433;
     --clr-text: #e6edf3;
-    --clr-text-muted: #8b949e;
+    --clr-text-muted: #adbac7;
     --clr-card-bg: #161b22;
     --clr-border: #30363d;
     --clr-btn-hover: #2d3748;
@@ -553,9 +553,9 @@ main {
 
 .fav-btn:hover,
 .fav-btn[data-saved="true"] {
-    background-color: #c0392b;
+    background-color: #922B21;
     color: #ffffff;
-    border-color: #c0392b;
+    border-color: #922B21;
 }
 
 /* Error state */
@@ -772,9 +772,9 @@ main {
 
 .detail-fav-btn:hover,
 .detail-fav-btn[data-saved="true"] {
-    background-color: #c0392b;
+    background-color: #922B21;
     color: #ffffff;
-    border-color: #c0392b;
+    border-color: #922B21;
 }
 
 .error-msg {
@@ -787,6 +787,14 @@ main {
 .error-msg a {
     color: #0d1f70;
     text-decoration: underline;
+}
+.error-msg a {
+    color: #0d1f70;
+    text-decoration: underline;
+}
+
+[data-theme="dark"] .error-msg a {
+    color: #7faaff;
 }
 
 /* ============================================================
