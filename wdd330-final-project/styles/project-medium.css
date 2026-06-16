@@ -32,11 +32,11 @@
 
     /* Hero gets taller and text gets bigger */
     .hero {
-        min-height: 75vh;
+        min-height: 280px;
     }
 
     .hero-content h1 {
-        font-size: var(--fs-2xl);
+        font-size: var(--fs-xl);
     }
 
     /* Country grid: 2 columns side by side */

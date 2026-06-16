@@ -1,7 +1,3 @@
-/* ============================================================
-   CSS CUSTOM PROPERTIES (Variables)
-   Define colors, fonts, and spacing once — reuse everywhere.
-   ============================================================ */
 :root {
     --clr-bg: #ffffff;
     --clr-primary: #01072b;
@@ -273,7 +269,7 @@ header {
 }
 
 /* ============================================================
-   MAIN — offset so content doesn't hide under fixed header
+   MAIN SECTION— offset so content doesn't hide under fixed header
    ============================================================ */
 main {
     padding-top: var(--header-h);
@@ -284,7 +280,7 @@ main {
    ============================================================ */
 .hero {
     position: relative;
-    min-height: 72vh;
+    height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -293,14 +289,14 @@ main {
     overflow: hidden;
 }
 
-/* Decorative floating emoji elements (CSS animation from W04) */
+/* Decorative floating emoji elements (CSS animation */
 .hero::before {
     content: '🌍';
     position: absolute;
     font-size: 8rem;
-    opacity: 0.07;
-    top: 8%;
-    right: -1%;
+    opacity: 0.50;
+    top: 9%;
+    right: 5%;
     animation: float 8s ease-in-out infinite;
     pointer-events: none;
 }
@@ -309,16 +305,38 @@ main {
     content: '✈️';
     position: absolute;
     font-size: 4rem;
-    opacity: 0.09;
     bottom: 12%;
-    left: 4%;
-    animation: float 6s ease-in-out infinite reverse;
+    left: 5%;
+    animation: fly 9s ease-in-out infinite;
     pointer-events: none;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-18px); }
+}
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.6;
+    }
+    120% {
+        transform: translate(280px, -280px) rotate(15deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(160px, 0) rotate(0deg);
+        opacity: 0;
+    }
 }
 
 .hero-content {
@@ -346,7 +364,7 @@ main {
 
 .cta-button {
     display: inline-block;
-    padding: 0.9rem 2.2rem;
+    padding: 0.7rem 1.8rem;
     background-color: var(--clr-secondary);
     color: #01072b;
     border-radius: var(--radius-pill);
@@ -360,6 +378,44 @@ main {
     background-color: #ffffff;
     transform: translateY(-3px);
     box-shadow: 0 8px 28px rgba(255, 255, 255, 0.3);
+}
+/* ============================================================
+   PAGE HERO (Country & Favorites pages)
+   ============================================================ */
+.page-hero {
+    position: relative;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.country-hero {
+    background-image: url('../images/country.webp');
+}
+
+.favorites-hero {
+    background-image: url('../images/favorites.webp');
+}
+
+.page-hero-overlay {
+    background-color: rgba(1, 7, 43, 0.55);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-hero h1 {
+    color: #ffffff;
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    padding: 0 var(--sp-sm);
 }
 
 /* ============================================================
@@ -378,9 +434,10 @@ main {
     display: flex;
     width: 100%;
     max-width: 520px;
-    border-radius: var(--radius);
+    border-radius: var(--radius-pill);
     overflow: hidden;
     box-shadow: var(--shadow);
+    border: 2px solid #01072b
 }
 
 .search-input {
@@ -388,11 +445,12 @@ main {
     padding: 0.85rem var(--sp-sm);
     font-size: var(--fs-base);
     font-family: var(--font);
-    border: 2px solid #01072b;
-    border-right: none;
     background-color: var(--clr-bg);
     color: var(--clr-text);
     outline: none;
+    appearance: none;
+    border: none;
+    -webkit-appearance: none;
     transition: border-color var(--transition), box-shadow var(--transition);
 }
 
@@ -400,7 +458,7 @@ main {
     color: var(--clr-text-muted);
 }
 
-.search-input:focus {
+.search-container:focus-within {
     border-color: #0d1f70;
     box-shadow: 0 0 0 3px rgba(1, 7, 43, 0.12);
 }
@@ -410,7 +468,6 @@ main {
     background-color: #01072b;
     color: #ffffff;
     font-size: 1.1rem;
-    border: 2px solid #01072b;
     transition: background-color var(--transition);
 }
 
