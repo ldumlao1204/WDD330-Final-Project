@@ -71,9 +71,11 @@
                     id="country-search"
                     class="search-input"
                     placeholder="Search for a country..."
+                    list="country-list"
                     autocomplete="off">
                 <button id="search-btn" class="search-btn" aria-label="Search">🔍</button>
             </div>
+            <datalist id="country-list"></datalist>
             <div class="region-filters" role="group" aria-label="Filter by region">
                 <button class="region-btn active" data-region="all">All</button>
                 <button class="region-btn" data-region="Africa">Africa</button>

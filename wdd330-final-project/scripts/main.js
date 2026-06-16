@@ -153,6 +153,7 @@ async function init() {
     showSkeletons(grid);
     try {
         allCountries = await fetchAllCountries();
+        populateDatalist(allCountries);
         renderCards(allCountries);
     } catch (error) {
         grid.innerHTML = `
@@ -164,5 +165,12 @@ async function init() {
         document.getElementById("retry-btn").addEventListener("click", init);
     }
 }
+function populateDatalist(countries) {
+    const datalist = document.getElementById("country-list");
+    if (!datalist) return;
+    const sortedNames = countries.map(c => c.name.common).sort();
+    datalist.innerHTML = sortedNames.map(name => `<option value="${name}"></option>`).join("");
+}
+
 
 init();
