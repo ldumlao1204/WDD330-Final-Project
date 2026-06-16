@@ -871,9 +871,10 @@ main {
 }
 
 .page-subtitle {
-    font-size: var(--fs-base);
+    font-size: var(--fs-lg);
     color: var(--clr-text-muted);
     margin-bottom: var(--sp-lg);
+    text-align: center;
 }
 
 /* ============================================================
