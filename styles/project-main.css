@@ -280,7 +280,7 @@ main {
    ============================================================ */
 .hero {
     position: relative;
-    height: 280px;
+    min-height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -343,7 +343,7 @@ main {
     position: relative;
     z-index: 2;
     color: #ffffff;
-    padding: var(--sp-xl) var(--sp-sm);
+    padding: var(--sp-lg) var(--sp-sm);
     max-width: 640px;
 }
 
