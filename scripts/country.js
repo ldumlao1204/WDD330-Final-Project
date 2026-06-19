@@ -1,7 +1,7 @@
 import { fetchCountryByCode } from "./countries.js";
-import { fetchNearbyAttractions, formatCategory } from "./geoapify.js";
+import { fetchNearbyAttractions } from "./geoapify.js";
 import { WeatherWidget } from "./weatherWidget.js";
-import { formatPopulation, getCapital, getCurrencies, getLanguages } from "./util.js";
+import { getCapital, getCurrencies, getLanguages } from "./util.js";
 import { saveFavorite, removeFavorite, isFavorite } from "./storage.js";
 
 const params = new URLSearchParams(window.location.search);

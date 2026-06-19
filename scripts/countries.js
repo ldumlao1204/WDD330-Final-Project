@@ -22,7 +22,7 @@ export async function fetchCountryByCode(code) {
     return country;
 }   
 
-    // Searches countries by name — uses filter() to find matches
+// Searches countries by name — uses filter() to find matches
 export function searchCountriesByName(countries, query) {
     const q = query.toLowerCase().trim();
     return countries.filter(c => c.name.common.toLowerCase().includes(q));

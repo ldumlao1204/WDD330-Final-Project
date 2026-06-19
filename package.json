@@ -4,8 +4,8 @@
   "description": "World e-Travel Explorer — WDD330 Final Project by Leilany Dumlao",
   "private": true,
   "scripts": {
-    "lint": "eslint wdd330-final-project/scripts/",
-    "lint:fix": "eslint wdd330-final-project/scripts/ --fix"
+    "lint": "eslint scripts/",
+    "lint:fix": "eslint scripts/ --fix"
   },
   "devDependencies": {
     "eslint": "^8.57.0"
